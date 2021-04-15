@@ -10,22 +10,21 @@
     <link rel="stylesheet" href="estilo.css">
 </head>
 
-<body >
+<body>
     <header>
-        <div class="conteiner conteiner_header" >
-            <nav id="Link" class="nav_header" >
-                <a href="#inicio"  onclick=" botaodoMenu()">inicio</a>
+        <div class="conteiner conteiner_header">
+            <nav id="Link" class="nav_header">
+                <a href="#inicio" onclick=" botaodoMenu()">inicio</a>
                 <a href="#sobre" onclick=" botaodoMenu()">sobre</a>
                 <a href="#info" onclick=" botaodoMenu()">desafios</a>
                 <a href="#endereco" onclick=" botaodoMenu()">endereço</a>
-                
             </nav>
-            <a class="btn_menu" href="#" onclick=" botaodoMenu()">
+            <a class="btn_menu" href="javascript:void(0)" onclick=" botaodoMenu()">
                 <i class="fas fa-bars"></i>
             </a>
         </div>
     </header>
-    <main onclick=" botaodoMenu()">
+    <main onclick="fecharMenu()">
         <section id="inicio" class="conteiner_banner">
             <img class="fundo_banner" src="assets_/imagem-fundo-banner.png" alt="">
             <div class="box_conteudo_banner">
@@ -36,7 +35,7 @@
             </div>
         </section>
 
-        <section  id="sobre" class="conteiner-sobre">
+        <section id="sobre" class="conteiner-sobre">
             <div class="conteiner conteiner_conteudo">
                 <h2>sobre os projetos</h2>
                 <div class="box_sobre">
@@ -76,17 +75,17 @@
                         <span>+30 desafios</span>
                     </div>
                 </div>
-            </div> 
+            </div>
         </section>
 
         <section id="endereco" class="endereco">
             <h2>endereço:</h2>
             <div class="box_endereco">
-                <p>Alameda Barão de Limeira, 539 
+                <p>Alameda Barão de Limeira, 539
                     Santa Cecilia, São Paulo - SP
                     CEP: 01202-001</p>
-                </div>
-                <img class="img_mapa" src="assets_/mapa.png" alt="">
+            </div>
+            <img class="img_mapa" src="assets_/mapa.png" alt="">
         </section>
     </main>
     <footer>
@@ -94,18 +93,30 @@
     </footer>
 
     <script>
-        function botaodoMenu()  {
-            var menu = document.getElementById("Link");
-            if (menu.style.display === "flex") {
-                // esconder o menu
-                menu.style.display = "none";
-            } else  {
-                // Mostrar o menu 
+        var menu = document.getElementById("Link");
+        function botaodoMenu() {
+            if (screen.width <= 420) {
+                if (menu.style.display === "flex") {
+                    // esconder o menu
+                    menu.style.display = "none";
+                } else {
+                    // Mostrar o menu 
+                    menu.style.display = "flex";
+                }
+            }
+        }
+        function fecharMenu() {
+            var fechar_menu =
+                document.getElementById("Link");
+            if (fechar_menu.style.display === "flex") {
+                // esconder menu
+                fechar_menu.style.display = "none";
+            }
+        }
+        window.onresize = () => {
+            if(screen.width > 420) {
                 menu.style.display = "flex";
-                // menu.style.backgroundColor = "blue";
-            }   
-            
-        
+            }
         }
     </script>
 </body>

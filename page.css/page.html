@@ -6,21 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>landing page</title>
+    <script src="https://kit.fontawesome.com/fd9c15c5d8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="estilo.css">
 </head>
 
-<body>
+<body >
     <header>
-        <div class="conteiner conteiner_header">
-            <nav class="nav_header">
-                <a href="#inicio">inicio</a>
-                <a href="#sobre">sobre</a>
-                <a href="#info">desafios</a>
-                <a href="#endereco">endereço</a>
+        <div class="conteiner conteiner_header" >
+            <nav id="Link" class="nav_header" >
+                <a href="#inicio"  onclick=" botaodoMenu()">inicio</a>
+                <a href="#sobre" onclick=" botaodoMenu()">sobre</a>
+                <a href="#info" onclick=" botaodoMenu()">desafios</a>
+                <a href="#endereco" onclick=" botaodoMenu()">endereço</a>
+                
             </nav>
+            <a class="btn_menu" href="#" onclick=" botaodoMenu()">
+                <i class="fas fa-bars"></i>
+            </a>
         </div>
     </header>
-    <main>
+    <main onclick=" botaodoMenu()">
         <section id="inicio" class="conteiner_banner">
             <img class="fundo_banner" src="assets_/imagem-fundo-banner.png" alt="">
             <div class="box_conteudo_banner">
@@ -87,6 +92,22 @@
     <footer>
         <span>Copyright © 2020 - Escola Senai de Informática</span>
     </footer>
+
+    <script>
+        function botaodoMenu()  {
+            var menu = document.getElementById("Link");
+            if (menu.style.display === "flex") {
+                // esconder o menu
+                menu.style.display = "none";
+            } else  {
+                // Mostrar o menu 
+                menu.style.display = "flex";
+                // menu.style.backgroundColor = "blue";
+            }   
+            
+        
+        }
+    </script>
 </body>
 
 </html>
